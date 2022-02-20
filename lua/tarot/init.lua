@@ -37,6 +37,4 @@ M.telescope_tarots = function(opts)
   }):find()
 end
 
-M.telescope_tarots()
-
 return M
