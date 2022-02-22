@@ -3,15 +3,6 @@ describe("tarot", function()
     require "tarot"
   end)
 
-  it("loads more than 0 tarot cards", function()
-    local cards = require("tarot").get_tarots()
-    local count = 0
-    for _ in pairs(cards) do
-      count = count + 1
-    end
-    assert(count > 0)
-  end)
-
   it("has a significance for each cards", function()
     local cards = require("tarot").get_tarots()
     for _, card_stuff in pairs(cards) do
@@ -26,5 +17,14 @@ describe("tarot", function()
       local is_valid = (arcana_type == "Major") or (arcana_type == "Minor")
       assert(is_valid)
     end
+  end)
+
+  it("has 78 cards", function()
+    local cards = require("tarot").get_tarots()
+    local count = 0
+    for _, _ in pairs(cards) do
+        count = count + 1
+    end
+    assert.equal(count, 78)
   end)
 end)
