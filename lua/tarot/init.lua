@@ -1,8 +1,8 @@
 local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
 local previewers = require "telescope.previewers"
-
 local conf = require("telescope.config").values
+
 local M = {}
 
 local deck = require('tarot.deck').get_deck()
