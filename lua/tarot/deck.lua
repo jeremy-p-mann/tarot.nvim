@@ -370,7 +370,7 @@ M.get_deck = function()
     {
       name = "Ten of Wands",
       arcana_type = "Minor",
-      significance = "Burden, extra responsibility, hard work, completion",
+      significance = "Saying yes too much, burden",
     },
     {
       name = "Page of Wands",
