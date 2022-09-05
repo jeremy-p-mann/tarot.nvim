@@ -395,4 +395,18 @@ M.get_deck = function()
   }
 end
 
+M.transfer_data_to_markdown = function()
+  for _, card in ipairs(M.get_deck()) do
+    local card_filepath = "cards/" .. card.name:lower():gsub(" ", "_") .. ".md"
+    local contents = "# "
+      .. card.name
+      .. "\n\n## Arcana Type: "
+      .. card.arcana_type
+      .. "\n\n## Significance \n\n"
+      .. card.significance
+    local cmd = 'echo "' .. contents .. '" > ' .. card_filepath
+    vim.fn.system(cmd)
+  end
+end
+
 return M
