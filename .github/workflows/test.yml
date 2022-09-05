@@ -1,0 +1,22 @@
+name: Test
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Install Dependencies
+        run: |
+          pip install -e .
+          pip install pytest
+          pip install streamlit
+
+      - run: nvim --headless -c "PlenaryBustedDirectory tests {minimal_init = 'tests/minimal_init.vim'}"
